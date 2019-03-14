@@ -10,6 +10,6 @@ mkdir -p /var/lib/motioneye"
 
 VOLUME /etc/motioneye /var/run/motion /var/lib/motioneye
 
-CMD cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf && \
-/usr/local/bin/meyectl startserver -c /etc/motioneye/motioneye.conf
+ADD https://raw.githubusercontent.com/ccrisan/motioneye/dev/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf
+CMD /usr/local/bin/meyectl startserver -c /etc/motioneye/motioneye.conf
 
